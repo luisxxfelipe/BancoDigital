@@ -13,16 +13,28 @@
         android:layout_height="match_parent"
         android:padding="24dp">
 
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_bank_verde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="24dp" />
+
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bd_edit"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="9dp"
             android:hint="Email"
-            android:padding="10dp"
+            android:padding="12dp"
+            app:drawableTint="@color/verde_escuro"
             app:layout_constraintBottom_toTopOf="@+id/editText2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
@@ -32,7 +44,10 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/bd_edit"
             android:hint="Password"
-            android:padding="10dp"
+            android:drawableStart="@drawable/ic_senha"
+            android:padding="12dp"
+            android:drawablePadding="9dp"
+            app:drawableTint="@color/verde_escuro"
             app:layout_constraintBottom_toTopOf="@+id/materialButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -44,7 +59,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/verde_escuro"
+            android:background="@drawable/bd_btn"
+            app:backgroundTint="@null"
             android:text="Entrar"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +74,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +107,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
