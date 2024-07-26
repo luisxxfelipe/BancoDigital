@@ -29,7 +29,7 @@
             android:background="@drawable/bd_edit"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="9dp"
-            android:hint="Email"
+            android:hint="E-mail"
             android:padding="12dp"
             app:drawableTint="@color/verde_escuro"
             app:layout_constraintBottom_toTopOf="@+id/editText2"
