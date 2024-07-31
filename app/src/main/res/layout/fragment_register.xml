@@ -61,6 +61,7 @@
                 tools:layout_editor_absoluteY="150dp" />
 
             <EditText
+                android:id="@+id/campo_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -84,6 +85,7 @@
                 tools:layout_editor_absoluteY="150dp" />
 
             <EditText
+                android:id="@+id/campo_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -107,6 +109,7 @@
                 tools:layout_editor_absoluteY="150dp" />
 
             <EditText
+                android:id="@+id/campo_celular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -130,6 +133,7 @@
                 tools:layout_editor_absoluteY="150dp" />
 
             <EditText
+                android:id="@+id/campo_senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -143,7 +147,7 @@
                 app:drawableTint="@color/verde_escuro" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/materialButton"
+                android:id="@+id/btn_criarConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
@@ -165,7 +169,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_enviar" />
 
         </LinearLayout>
 

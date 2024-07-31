@@ -23,7 +23,7 @@
             tools:layout_editor_absoluteY="24dp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bd_edit"
@@ -32,13 +32,13 @@
             android:hint="E-mail"
             android:padding="12dp"
             app:drawableTint="@color/verde_escuro"
-            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            app:layout_constraintBottom_toTopOf="@+id/edit_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logoImageView"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -48,14 +48,14 @@
             android:padding="12dp"
             android:drawablePadding="9dp"
             app:drawableTint="@color/verde_escuro"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton"
+            app:layout_constraintBottom_toTopOf="@+id/btn_entrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
+            android:id="@+id/btn_entrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -66,7 +66,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_password" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -78,7 +78,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton">
+            app:layout_constraintTop_toBottomOf="@+id/btn_entrar">
 
             <TextView
                 android:layout_width="match_parent"
