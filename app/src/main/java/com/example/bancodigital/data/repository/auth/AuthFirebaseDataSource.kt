@@ -1,6 +1,8 @@
 package com.example.bancodigital.data.repository.auth
 
-interface AuthFIrebaseDataSource {
+import com.example.bancodigital.data.model.User
+
+interface AuthFirebaseDataSource {
 
     suspend fun login(
         email: String,
@@ -8,11 +10,8 @@ interface AuthFIrebaseDataSource {
     )
 
     suspend fun register(
-        nome: String,
-        email: String,
-        telefone: String,
-        password: String
-    )
+        user: User
+    ): User
 
     suspend fun recover(
         email: String

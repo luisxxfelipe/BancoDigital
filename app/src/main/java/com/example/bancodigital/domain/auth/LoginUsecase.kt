@@ -1,13 +1,14 @@
 package com.example.bancodigital.domain.auth
 
-import com.example.bancodigital.data.repository.auth.AuthFIrebaseDataSourceImpl
+import com.example.bancodigital.data.repository.auth.AuthFirebaseDataSourceImpl
+import javax.inject.Inject
 
-class LoginUsecase(
-    private val authFIrebaseDataSourceImpl: AuthFIrebaseDataSourceImpl
+class LoginUsecase @Inject constructor(
+    private val authFirebaseDataSourceImpl: AuthFirebaseDataSourceImpl
 ) {
 
     suspend operator fun invoke(email: String, password: String) {
-        return authFIrebaseDataSourceImpl.login(email, password)
+        return authFirebaseDataSourceImpl.login(email, password)
     }
 
 }
