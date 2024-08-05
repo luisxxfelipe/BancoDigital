@@ -2,6 +2,7 @@
 <resources>
 
     <color name="verde_escuro">#012030</color>
+    <color name="verde_menos_escuro">#D8012030</color>
     <color name="azul">#13678A</color>
     <color name="verde_agua">#45C4B0</color>
     <color name="verde_claro">#9AEBA3</color>

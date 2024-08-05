@@ -5,8 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.example.bancodigital.data.model.User
 import com.example.bancodigital.databinding.FragmentRegisterBinding
+import com.example.bancodigital.util.StateView
 import com.example.bancodigital.util.initToolbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,6 +19,8 @@ class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
+
+    private val registerViewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,15 +47,63 @@ class RegisterFragment : Fragment() {
         val phone = binding.campoCelular.text.toString().trim()
         val password = binding.campoSenha.text.toString().trim()
 
-        if (email.isNotEmpty() && name.isNotEmpty() && phone.isNotEmpty() && password.isNotEmpty()) {
-            Toast.makeText(requireContext(), "Registro realizado com sucesso", Toast.LENGTH_SHORT)
-                .show()
+        if (name.isNotEmpty()) {
+            if (email.isNotEmpty()) {
+                if (phone.isNotEmpty()) {
+                    if (password.isNotEmpty()) {
+
+                        binding.progressBar.isVisible = true
+
+                        val user = User(name, email, phone, password)
+                        registerUser(User(name, email, phone, password))
+
+                    } else {
+                        Toast.makeText(requireContext(), "Preencha a senha!", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Preencha o celular!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Preencha o e-mail!", Toast.LENGTH_SHORT).show()
+            }
         } else {
-            Toast.makeText(
-                requireContext(),
-                "Preencha todos os campos corretamente.",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(requireContext(), "Preencha o nome!", Toast.LENGTH_SHORT).show()
+        }
+
+        }
+
+    private fun registerUser(user: User) {
+        Toast.makeText(
+            requireContext(),
+            "Cadastrado com sucesso!",
+            Toast.LENGTH_SHORT
+        ).show()
+
+        registerViewModel.register(user).observe(viewLifecycleOwner) { statview ->
+            when (statview) {
+                is StateView.Loading -> {
+                    binding.progressBar.isVisible = true
+                }
+
+                is StateView.Error -> {
+                    binding.progressBar.isVisible = false
+                    Toast.makeText(
+                        requireContext(),
+                        statview.message, Toast.LENGTH_SHORT
+                    ).show()
+
+                }
+
+                is StateView.Sucess -> {
+                    binding.progressBar.isVisible = false
+                    Toast.makeText(
+                        requireContext(),
+                        "Sucesso ao cadastrar usuário", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
     }
 

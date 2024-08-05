@@ -63,15 +63,14 @@
             <EditText
                 android:id="@+id/campo_nome"
                 android:layout_width="match_parent"
+                style="@style/Theme.EditText"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/bd_edit_around"
                 android:drawableStart="@drawable/ic_user_fill"
                 android:drawablePadding="8dp"
                 android:hint="Digite seu nome"
                 android:inputType="textEmailAddress"
-                android:padding="14dp"
-                android:textColorHint="@color/cinza"
+                android:background="@drawable/bd_edit_around"
                 app:drawableTint="@color/verde_escuro" />
 
             <TextView
@@ -93,9 +92,8 @@
                 android:drawableStart="@drawable/ic_email_line"
                 android:drawablePadding="8dp"
                 android:hint="Digite seu e-mail"
+                style="@style/Theme.EditText"
                 android:inputType="textEmailAddress"
-                android:padding="14dp"
-                android:textColorHint="@color/cinza"
                 app:drawableTint="@color/verde_escuro" />
 
             <TextView
@@ -117,9 +115,8 @@
                 android:drawableStart="@drawable/ic_telefone_fill"
                 android:drawablePadding="8dp"
                 android:hint="Digite seu celular"
+                style="@style/Theme.EditText"
                 android:inputType="textEmailAddress"
-                android:padding="14dp"
-                android:textColorHint="@color/cinza"
                 app:drawableTint="@color/verde_escuro" />
 
             <TextView
@@ -140,10 +137,9 @@
                 android:background="@drawable/bd_edit_around"
                 android:drawableStart="@drawable/ic_senha"
                 android:drawablePadding="8dp"
+                style="@style/Theme.EditText"
                 android:hint="Digite uma senha"
-                android:inputType="textEmailAddress"
-                android:padding="14dp"
-                android:textColorHint="@color/cinza"
+                android:inputType="textPassword"
                 app:drawableTint="@color/verde_escuro" />
 
             <com.google.android.material.button.MaterialButton
@@ -160,6 +156,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
             <ProgressBar
+                android:id="@+id/progressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
